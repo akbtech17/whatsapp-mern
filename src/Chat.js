@@ -51,7 +51,17 @@ export default function Chat() {
                 </p>
                 
             </div>
-            
+            <div className="chat__footer">
+                <InsertEmoticon />
+                <form>
+                    <input 
+                        type="text" 
+                        placeholder="Type a message"
+                    />
+                    <button type="submit">Send a message</button>
+                </form>
+                <MicIcon />
+            </div>
         </div>
     )
 }
