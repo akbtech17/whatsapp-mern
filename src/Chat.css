@@ -3,3 +3,33 @@
     flex-direction: column;
     flex:0.65;
 }
+
+.chat__header {
+    padding: 20px;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+}
+
+.chat__headerInfo {
+    flex:1; 
+    margin-left: 20px;
+}
+
+.chat__headerInfo > h3 {
+    margin-bottom: 3px;
+    font-weight: 500;
+}
+
+.chat__headerInfo > p {
+    color: gray;
+}
+
+.chat__body {
+    flex:1;
+    background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+    background-repeat: repeat;
+    background-position: center;
+    padding: 30px;
+    overflow: scroll;
+}
