@@ -2,12 +2,21 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import Messages from './dbMessages.js'
+import Pusher from 'pusher';
 
 
 
 //app-config
 const app = express();
 const port = process.env.PORT || 9000;
+
+const pusher = new Pusher({
+    appId: '1084949',
+    key: 'dbb968f748401ec8df3f',
+    secret: '066c33f21eeaaf7136df',
+    cluster: 'ap2',
+    encrypted: true
+  });
 
 
 //middleware
@@ -20,6 +29,19 @@ mongoose.connect(connect_url, {
     useNewUrlParser:true,
     useUnifiedTopology:true,
 });
+
+const db = mongoose.connection;
+
+db.once('open', () => {
+    console.log('db is connected');
+
+    const msgCollection = db.collection("messagecontents");
+    const changeStream = msgCollection.watch();
+
+    changeStream.on("change", (change) => {
+        console.log(change);
+    })
+})
 
 //????
 
