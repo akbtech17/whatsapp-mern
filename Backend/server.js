@@ -5,8 +5,6 @@ import Messages from './dbMessages.js'
 import Pusher from 'pusher';
 import cors from 'cors';
 
-
-
 //app-config
 const app = express();
 const port = process.env.PORT || 9000;
