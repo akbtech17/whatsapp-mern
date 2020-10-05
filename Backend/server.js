@@ -53,6 +53,7 @@ db.once('open', () => {
                 name: messageDetails.name,
                 message: messageDetails.message,
                 timestamp: messageDetails.timestamp,
+                recieved: messageDetails.recieved,
             })
         }
         else {
